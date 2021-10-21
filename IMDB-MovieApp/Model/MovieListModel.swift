@@ -18,5 +18,5 @@ struct MovieListItem: Codable {
     let id, rank, title, fullTitle: String?
     let year: String?
     let image: String?
-    let crew, imDBRating, imDBRatingCount: String?
+    let crew, imDbRating, imDbRatingCount: String?
 }

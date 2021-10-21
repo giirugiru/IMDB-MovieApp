@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dashboard View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DashboardViewController" customModule="IMDB_MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxL-0c-iR3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gyH-vr-toI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cme-EX-0Z1">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                                                <color key="backgroundColor" red="0.83733922780000003" green="0.31007281170000001" blue="0.24972173880000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="450" id="lz5-rh-UVa"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f0z-eX-9v5">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Adt-JU-QtC">
+                                                <rect key="frame" x="0.0" y="450" width="414" height="402"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gyH-vr-toI" firstAttribute="trailing" secondItem="kaV-ZC-yb4" secondAttribute="trailing" id="FaI-TR-5OO"/>
+                                    <constraint firstItem="gyH-vr-toI" firstAttribute="height" secondItem="tiN-sx-GhH" secondAttribute="height" priority="750" id="Ret-C5-9Kk"/>
+                                    <constraint firstItem="gyH-vr-toI" firstAttribute="bottom" secondItem="kaV-ZC-yb4" secondAttribute="bottom" id="dVB-yc-V7W"/>
+                                    <constraint firstItem="gyH-vr-toI" firstAttribute="leading" secondItem="kaV-ZC-yb4" secondAttribute="leading" id="qnW-wE-UmQ"/>
+                                    <constraint firstItem="gyH-vr-toI" firstAttribute="top" secondItem="kaV-ZC-yb4" secondAttribute="top" id="rCS-oy-Vmg"/>
+                                    <constraint firstItem="gyH-vr-toI" firstAttribute="width" secondItem="tiN-sx-GhH" secondAttribute="width" id="yhJ-Yd-3xH"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="kaV-ZC-yb4"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="tiN-sx-GhH"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OxL-0c-iR3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IIh-dy-7aN"/>
+                            <constraint firstItem="OxL-0c-iR3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JGu-od-y9m"/>
+                            <constraint firstItem="OxL-0c-iR3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RgX-sV-308"/>
+                            <constraint firstItem="OxL-0c-iR3" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="r4j-7A-LyL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentStackView" destination="gyH-vr-toI" id="JNh-FK-u6r"/>
+                        <outlet property="moviesTableView" destination="Adt-JU-QtC" id="RgV-yg-QzQ"/>
+                        <outlet property="scrollView" destination="OxL-0c-iR3" id="kho-a3-3Kr"/>
+                        <outlet property="spotlightMoviesCollectionView" destination="cme-EX-0Z1" id="ErG-xW-TID"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="29.464285714285712"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
